@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "form-spam-guard"
+version = "0.1.0"
+description = "CAPTCHA-free spam protection for web forms: honeypot, signed timestamp token, content filter and rate limiter. Standard library only."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+authors = [{ name = "Marvin Palencia" }]
+keywords = ["spam", "honeypot", "forms", "captcha", "flask", "fastapi"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Internet :: WWW/HTTP",
+]
+dependencies = []
+
+[project.optional-dependencies]
+flask = ["flask>=2.0"]
+fastapi = ["fastapi>=0.100", "python-multipart", "httpx"]
+test = ["pytest>=7"]
+
+[tool.setuptools]
+packages = ["form_spam_guard"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
